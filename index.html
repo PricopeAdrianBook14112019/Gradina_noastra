@@ -130,7 +130,7 @@ C11: 2 linii la 15cm
 C12: 2 linii la 15cm
 C13: 1 linie (margine E, deserveste pomi de bordura - Soc, Nuc, Mosmon)
 
-Solar: 5 raze x 2 linii = 10 linii (alimentat din T1/T2)
+Solar: 5 rânduri x 2 linii = 10 linii (alimentat din T1/T2)
 Livada: 2 alei x 3 linii = 6 linii (cerc la pomi)
 Total aproximativ: 30 linii picurare
 
@@ -261,42 +261,6 @@ INSTRUCTIUNI PENTRU ASISTENTUL AI CARE CITESTE ACEST BLOC:
   --text:#caf0f8; --text2:#7ec8da; --text3:#4a8fa8;
   --fantana:#4361ee; --container:#7b2d8b; --both:#06d6a0;
   --r:6px;
- /* ADAUGĂ ASTA LA FINALUL SECȚIUNII <style> */
-@media (max-width: 768px) {
-  /* Face meniul de tab-uri să poată fi glisat cu degetul stânga-dreapta */
-  #tabbar {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 5px;
-  }
-  
-  /* Ajustează tabelele să nu iasă din ecran */
-  .itbl-wrap, .jurnal-body {
-    overflow-x: auto;
-  }
-  
-  /* Mărește butoanele pentru a fi mai ușor de apăsat cu degetul */
-  .tab, .topbtn, .jurnal-add-btn {
-    padding: 12px 15px !important;
-    font-size: 0.85rem !important;
-  }
-  
-  /* Permite hărții să fie glisată orizontal pe ecrane foarte înguste */
-  .prop-map-wrap, .irig-map {
-    overflow-x: auto;
-  }
-  
-  /* Stivuiește statisticile vertical pe mobil */
-  #statsrow {
-    flex-wrap: wrap;
-  }
-  .st {
-    flex: 1 1 30%;
-    border-bottom: 1px solid var(--border);
-  }
-} 
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden}
@@ -628,7 +592,7 @@ td.iname{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--acce
     <div class="prop-card"><h3>🌡 Climă</h3><p>Continental · sol argilos<br>Veri calde (&gt;35°C), ierni reci<br>Îngheț: oct–apr</p></div>
     <div class="prop-card"><h3>🔧 Metodă</h3><p>No-Dig complet<br>Companion Planting<br>Zero chimicale</p></div>
     <div class="prop-card"><h3>💧 Apă</h3><p>Fântână + pompă submersibilă<br>Container 1000L ploaie (SE)<br>Irigare prin picurare</p></div>
-    <div class="prop-card"><h3>☀️ Solar</h3><p>Solar principal · G-R23–R26<br>5 raze × 2 linii picurare<br>Alimentat din coloana principală</p></div>
+    <div class="prop-card"><h3>☀️ Solar</h3><p>Solar principal · G-R23–R26<br>5 rânduri × 2 linii picurare<br>Alimentat din coloana principală</p></div>
     <div class="prop-card"><h3>📐 Suprafețe</h3><p>Grădină: 31 rânduri × 13 col.<br>Livadă: 7 rânduri + pomi<br>Curte: 26 rânduri + boltă</p></div>
   </div>
   <div class="prop-map-wrap" style="flex:1;overflow:auto">
@@ -1209,13 +1173,13 @@ const CAL_DATA = [
   {luna:'Martie 2026',cat:'c',emoji:'🌼',text:'Semănat crăițe și gălbenele interior',detail:'Transplant în câmp în apr–mai. 1 crăiță la fiecare 3–4 plante de legumă.',comp:'Tagetes patula (pitică) mai eficientă anti-nematozi decât T.erecta',amestec:''},
   {luna:'Aprilie 2026',cat:'s',emoji:'🌱',text:'Plantare crăițe, gălbenele, floarea soarelui exterior',detail:'Temperatura sol >10°C. Crăițele pe marginile tuturor rândurilor de legume.',comp:'Crăițe: anti-nematozi · Gălbenele: atrag Syrphidae (200 afide/larvă/săptămână) · Floarea soarelui: habitat păsări',amestec:'Banda florală protectoare'},
   {luna:'Aprilie 2026',cat:'s',emoji:'🥕',text:'Semănat direct: morcov + ceapă alternativ',detail:'Rândul de morcov alternează cu rândul de ceapă. Sulful cepei respinge musca morcovului.',comp:'Morcov + Ceapă = duo clasic anti-dăunători',amestec:'Trio rădăcinoase G-R5, G-R8, G-R30'},
-  {luna:'Aprilie 2026',cat:'s',emoji:'🌱',text:'Semănat schinduf direct în câmp',detail:'Temperatura sol >12°C. Direct unde vor fi ardeii și roșiile. Crește rapid 40 zile.',comp:'Schinduf fixează azot — hrănește viitorii ardei',amestec:'Ghildul Ardeiului — pregătire sol'},
-  {luna:'Aprilie 2026',cat:'s',emoji:'🥬',text:'Transplant varză + varză kale',detail:'Răsaduri la 15cm înălțime. 50–60cm distanță. Sol cu compost. Udare la bază.',comp:'Plantezi mentă (ghiveci înfundat) la 30cm de fiecare varză',amestec:'Ghildul Verzei G-R7, G-R21'},
+  {luna:'Aprilie 2026',cat:'s',emoji:'🌱',text:'Semănat schinduf direct în câmp',detail:'Temperatura sol >12°C. Direct unde vor fi ardeii și roșiile. Crește rapid 40 zile.',comp:'Schinduf fixează azot — hrănește viitorii ardei',amestec:'Frăția Ardeiului — pregătire sol'},
+  {luna:'Aprilie 2026',cat:'s',emoji:'🥬',text:'Transplant varză + varză kale',detail:'Răsaduri la 15cm înălțime. 50–60cm distanță. Sol cu compost. Udare la bază.',comp:'Plantezi mentă (ghiveci înfundat) la 30cm de fiecare varză',amestec:'Frăția Verzei G-R7, G-R21'},
   {luna:'Aprilie 2026',cat:'irig',emoji:'💧',text:'Pornire sistem irigare — test toate coloanele',detail:'Verifici scurgerile. Testezi debitele. Completezi sau repari înainte de sezon. Notezi în jurnal.',comp:'',amestec:''},
   {luna:'Aprilie 2026',cat:'nd',emoji:'🌍',text:'Aplicare mulci pe paturile goale',detail:'Paie, frunze tocate sau carton ud între plante. 10–15cm. Sufocă buruienile, reține umiditatea.',comp:'',amestec:''},
-  {luna:'Mai 2026',cat:'s',emoji:'🍅',text:'Transplant roșii cherry + Inimă de Bou (după 15 mai)',detail:'Sol cald (>15°C noapte). 60–70cm distanță. Îngroapă tulpina adânc — rădăcini adventive.',comp:'Busuioc: 1 plantă la 2 roșii. Crăițe pe margini.',amestec:'Ghildul Roșiei G-R6, G-R10, Solar G-R25'},
-  {luna:'Mai 2026',cat:'s',emoji:'🌶️',text:'Transplant ardei capia + ardei gras (după 15 mai)',detail:'Răsaduri la 20–25cm. Sol bogat în K (cenușă de lemn). Agril dacă vin nopți reci.',comp:'Busuioc intercalat. Crăițe pe margini. Schinduf printre.',amestec:'Ghildul Ardeiului G-R4, G-R9, Solar G-R24'},
-  {luna:'Mai 2026',cat:'s',emoji:'🍆',text:'Transplant vinete (după 20 mai)',detail:'Cea mai sensibilă la frig. Plantezi ultimele. 50cm distanță. Mulci la bază imediat.',comp:'Busuioc companion. Crăițe anti-nematozi.',amestec:'Ghildul Ardeiului G-R9'},
+  {luna:'Mai 2026',cat:'s',emoji:'🍅',text:'Transplant roșii cherry + Inimă de Bou (după 15 mai)',detail:'Sol cald (>15°C noapte). 60–70cm distanță. Îngroapă tulpina adânc — rădăcini adventive.',comp:'Busuioc: 1 plantă la 2 roșii. Crăițe pe margini.',amestec:'Frăția Roșiei G-R6, G-R10, Solar G-R25'},
+  {luna:'Mai 2026',cat:'s',emoji:'🌶️',text:'Transplant ardei capia + ardei gras (după 15 mai)',detail:'Răsaduri la 20–25cm. Sol bogat în K (cenușă de lemn). Agril dacă vin nopți reci.',comp:'Busuioc intercalat. Crăițe pe margini. Schinduf printre.',amestec:'Frăția Ardeiului G-R4, G-R9, Solar G-R24'},
+  {luna:'Mai 2026',cat:'s',emoji:'🍆',text:'Transplant vinete (după 20 mai)',detail:'Cea mai sensibilă la frig. Plantezi ultimele. 50cm distanță. Mulci la bază imediat.',comp:'Busuioc companion. Crăițe anti-nematozi.',amestec:'Frăția Ardeiului G-R9'},
   {luna:'Mai 2026',cat:'c',emoji:'🌽',text:'Semănat porumb (sol cald >18°C)',detail:'Direct în sol. 30cm în rând, 70cm între rânduri. Semeni în grupuri de 3–4 pentru polenizare.',comp:'La 2 săpt: fasole urcătoare la baza porumbului',amestec:'Three Sisters — G-R4 col 5-11'},
   {luna:'Mai 2026',cat:'c',emoji:'🫘',text:'Plantare fasole urcătoare la baza porumbului',detail:'La 15–20cm de tulpina porumbului. Fasole fixează azot pentru porumb.',comp:'La 2 săpt: dovlecel/dovleac între rânduri',amestec:'Three Sisters completat'},
   {luna:'Mai 2026',cat:'nd',emoji:'🌍',text:'Mulci din frunze de schinduf tăiat',detail:'Schinduf semănat în aprilie — taie la 10cm. Lasă pe loc ca mulci verde bogat în azot.',comp:'',amestec:''},
@@ -1242,7 +1206,7 @@ const CAL_DATA = [
 ];
 
 const MIX_DATA = [
-  {id:'m1',title:'🍅 Ghildul Roșiei',subtitle:'G-R6, G-R10, Solar G-R25',color:'#e76f51',
+  {id:'m1',title:'🍅 Frăția Roșiei',subtitle:'G-R6, G-R10, Solar G-R25',color:'#e76f51',
     roles:['Ancoră','Protector','Atractor'],
     plants:[
       {n:'Roșii cherry',r:'Ancoră',c:'#e76f51',note:'60cm distanță. Palisare. 1-2 tulpini.'},
@@ -1252,7 +1216,7 @@ const MIX_DATA = [
       {n:'Morcov',r:'Afânare sol',c:'#f4a261',note:'Rădăcina afânează argila lângă roșii.'},
     ],
     tip:'Alternezi: roșie cherry — busuioc — roșie IB — crăiță — roșie cherry. Morcovii pe marginea rândului.'},
-  {id:'m2',title:'🌶️ Ghildul Ardeiului',subtitle:'G-R4, G-R9, Solar G-R24',color:'#e65100',
+  {id:'m2',title:'🌶️ Frăția Ardeiului',subtitle:'G-R4, G-R9, Solar G-R24',color:'#e65100',
     roles:['Ancoră','Protector','Fixator N'],
     plants:[
       {n:'Ardei capia',r:'Ancoră',c:'#e65100',note:'50cm distanță. Sol cald bogat în K.'},
@@ -1271,7 +1235,7 @@ const MIX_DATA = [
       {n:'Crăițe',r:'Protector',c:'#e76f51',note:'Pe marginile rândului.'},
     ],
     tip:'Porumb primul (mai), la 2 săptămâni fasolea la baza lui, la încă 2 săptămâni dovleacul între rânduri.'},
-  {id:'m4',title:'🥬 Ghildul Verzei',subtitle:'G-R7, G-R21, G-R29',color:'#52b788',
+  {id:'m4',title:'🥬 Frăția Verzei',subtitle:'G-R7, G-R21, G-R29',color:'#52b788',
     roles:['Ancoră','Protector'],
     plants:[
       {n:'Varză',r:'Ancoră',c:'#52b788',note:'Transplant mai. 50cm. Mult azot necesar.'},
@@ -1347,7 +1311,7 @@ const NODIG_TIPS = [
 const IRIG_DATA = [
   {id:'curte1',zona:'curte',name:'Curte — alee N',linii:1,dist:'—',sursa:'fantana',program:'',plante:'',note:'Linie de-a lungul aleii spre N'},
   {id:'curte2',zona:'curte',name:'Curte — gard V / boltă',linii:2,dist:'1.5m',sursa:'fantana',program:'',plante:'Smochin, Goji',note:'2 linii paralele: una lângă gard V, alta la ~1.5m pe boltă'},
-  {id:'solar1',zona:'solar',name:'Solar — 5 raze × 2 linii',linii:10,dist:'—',sursa:'fantana',program:'',plante:'Roșii, Ardei, Salate',note:'2 linii intră în solar și se ramifică în 5 direcții × 2 linii'},
+  {id:'solar1',zona:'solar',name:'Solar — 5 rânduri × 2 linii',linii:10,dist:'—',sursa:'fantana',program:'',plante:'Roșii, Ardei, Salate',note:'2 linii intră în solar și se ramifică în 5 direcții × 2 linii'},
   {id:'col1',zona:'gradina',name:'C1 — Margine V',linii:1,dist:'50cm/C2',sursa:'fantana',program:'',plante:'',note:'Prima linie după solar spre V'},
   {id:'col2',zona:'gradina',name:'C2 — Prima coloană',linii:1,dist:'100cm/C1',sursa:'fantana',program:'',plante:'',note:'O singură linie până la capătul livezii'},
   {id:'col3',zona:'gradina',name:'C3 — A doua coloană',linii:2,dist:'30cm',sursa:'fantana',program:'',plante:'',note:'2 linii la 30 cm una de alta'},
@@ -1366,43 +1330,202 @@ const IRIG_DATA = [
 ];
 
 const RAND_MAPS_DATA = [
-  {r:'G-R4',name:'G-R4 — Ardei + Busuioc + Crăițe',
-    plants:[
-      {n:'Zmeur (existent)',r:'Ancoră/Umbra',c:'#e76f51',cls:'role-a',desc:'Col V — deja existent. Umbra parțial vara = benefică pentru ardei care nu suportă arșița directă.'},
-      {n:'Ardei capia',r:'Ancoră',c:'#e65100',cls:'role-a',desc:'Plantare după 15 mai. 50cm distanță. Sensibil la ger. Palisare la 30cm.'},
-      {n:'Busuioc',r:'Protector',c:'#52b788',cls:'role-p',desc:'1 plantă la 2 ardei. Linalool alungă tripsii și afidele. Recolți frunze pe tot sezonul.'},
-      {n:'Ardei gras',r:'Ancoră',c:'#f4a261',cls:'role-a',desc:'La 50cm de ardei capia. Preferă același sol cald, bogat în K.'},
-      {n:'Crăițe',r:'Protector+Atractor',c:'#ffd166',cls:'role-p',desc:'Marginile rândului. Alpha-terthienyl = nematocid.'},
-      {n:'Schinduf',r:'Fixator N',c:'#06d6a0',cls:'role-n',desc:'Intercalat printre ardei. Semănat direct mai. Taie la 10cm = mulci verde.'},
-    ]},
-  {r:'G-R6',name:'G-R6 — Roșii cherry + Inimă de Bou',
-    plants:[
-      {n:'Zmeur (existent)',r:'Ancoră/Umbra',c:'#e76f51',cls:'role-a',desc:'Col V.'},
-      {n:'Roșii cherry',r:'Ancoră',c:'#c0392b',cls:'role-a',desc:'Plantare mai. 60cm. Palisare. 1-2 tulpini.'},
-      {n:'Busuioc',r:'Protector',c:'#52b788',cls:'role-p',desc:'1 plantă la 2 roșii. Florile atrag albinele.'},
-      {n:'Roșii Inimă de Bou',r:'Ancoră',c:'#e74c3c',cls:'role-a',desc:'Alternezi cu cherry. 70cm. Soiuri mari, calitate înaltă.'},
-      {n:'Crăițe',r:'Protector+Atractor',c:'#ffd166',cls:'role-p',desc:'La fiecare 3–4 roșii câte o crăiță.'},
-      {n:'Morcov (margine)',r:'Afânare sol',c:'#f4a261',cls:'role-ac',desc:'Pe marginea rândului. Afânează argilă fără să concureze cu roșia.'},
-    ]},
-  {r:'G-R7',name:'G-R7 — Varză + Varță Kale',
-    plants:[
-      {n:'Coacăz (existent)',r:'Deja existent',c:'#9b5de5',cls:'role-a',desc:'Col V.'},
-      {n:'Varză',r:'Ancoră',c:'#52b788',cls:'role-a',desc:'Transplant mai. 50cm. Mult azot necesar.'},
-      {n:'Mentă (ghiveci)',r:'Protector',c:'#9b5de5',cls:'role-p',desc:'Mentolul respinge Pieris brassicae. Ghiveci înfundat obligatoriu!'},
-      {n:'Varză Kale',r:'Ancoră sezon lung',c:'#7ec8da',cls:'role-a',desc:'Rezistă la -10°C. Recoltezi frunze până în ianuarie.'},
-      {n:'Crăițe',r:'Atractor parazitoizi',c:'#ffd166',cls:'role-p',desc:'Atrag Cotesia glomerata — parazitoid omizilor vărzarului.'},
-    ]},
-  {r:'G-R23',name:'G-R23 — Amestec Salate Solar',
-    plants:[
-      {n:'Spanac',r:'Acoperiș rapid',c:'#7ec8da',cls:'role-ac',desc:'Col 1 și 8. Crește repede. Recoltezi la 40 zile.'},
-      {n:'Rucola',r:'Acoperiș rapid',c:'#52b788',cls:'role-ac',desc:'Col 2 și 3. 30 zile maturitate. Seamănă la 3 săpt. interval.'},
-      {n:'Macriș',r:'Peren — ancoră',c:'#ffd166',cls:'role-a',desc:'PEREN. Frunze acre comestibile toată perioada. Plantezi o dată.'},
-      {n:'Mangold',r:'Ancoră producție lungă',c:'#f4a261',cls:'role-a',desc:'Rădăcini profunde afânează argilă solarului.'},
-      {n:'Pătrunjel',r:'Atractor insecte',c:'#9b5de5',cls:'role-at',desc:'Florile atrag Syrphidae. Rădăcina pivotantă aerisește.'},
-      {n:'Ridichi',r:'Marcator + afânare',c:'#e76f51',cls:'role-ac',desc:'Germinare 5 zile — marchează rândul. Recoltezi la 25 zile.'},
-    ]},
+  {r:'G-R1',name:'G-R1 — Vișin · Coacăz · Piersic',plants:[
+    {n:'Vișin (col V)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Col 1. Nu plantezi solanacee în 3m.'},
+    {n:'Coacăz (col 2)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Arbuști fructiferi existenți.'},
+    {n:'Spații libere (col 3-9)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile — ideal crăițe sau trifoi alb sub pomi.'},
+    {n:'Piersic (col 10-12)',r:'Deja existent',c:'#f4a261',cls:'role-a',desc:'Piersici existenți spre E.'},
+  ]},
+  {r:'G-R2',name:'G-R2 — Vișin · Coacăz · Piersic · Cireș',plants:[
+    {n:'Vișin (col V)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Coacăz (col 2)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Existent.'},
+    {n:'Spații libere (col 3-9)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Piersic + Cireș (E)',r:'Deja existent',c:'#f4a261',cls:'role-a',desc:'Pomi existenți pe coloanele E.'},
+  ]},
+  {r:'G-R3',name:'G-R3 — Vișin · Agriș · Coacăz · Piersic',plants:[
+    {n:'Vișin (col V)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Col 1.'},
+    {n:'Agriș roșu (col 2)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Existent.'},
+    {n:'Coacăz (col 3)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Existent.'},
+    {n:'Spații libere (col 4-9)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Piersic + Cireș (E)',r:'Deja existent',c:'#f4a261',cls:'role-a',desc:'Pomi existenți.'},
+  ]},
+  {r:'G-R4',name:'G-R4 — Frăția Ardeiului (Ardei + Busuioc + Crăițe)',plants:[
+    {n:'Zmeur (col V, existent)',r:'Ancoră/Umbră',c:'#e76f51',cls:'role-a',desc:'Col V existent. Umbra parțială vara — benefică ardeilor care nu suportă arșița directă.'},
+    {n:'Ardei capia',r:'Ancoră',c:'#e65100',cls:'role-a',desc:'Plantare după 15 mai. 50cm distanță. Sensibil la ger. Palisare la 30cm.'},
+    {n:'Ardei gras',r:'Ancoră',c:'#f4a261',cls:'role-a',desc:'La 50cm de ardei capia. Sol cald bogat în K.'},
+    {n:'Busuioc',r:'Protector',c:'#52b788',cls:'role-p',desc:'1 plantă la 2 ardei. Linalool alungă tripsii și afidele.'},
+    {n:'Crăițe',r:'Protector+Atractor',c:'#ffd166',cls:'role-p',desc:'Marginile rândului. Alpha-terthienyl = nematocid.'},
+    {n:'Schinduf',r:'Fixator N',c:'#06d6a0',cls:'role-n',desc:'Intercalat printre ardei. Semănat direct mai. Taie la 10cm = mulci verde bogat în azot.'},
+  ]},
+  {r:'G-R5',name:'G-R5 — Agriș · Măr · Trio Rădăcinoase',plants:[
+    {n:'Agriș roșu (col V)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Măr roșu (col 3)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent. ATENȚIE col 12: Măr spontan (drajon vecin) — decizie: păstrezi sau elimini?'},
+    {n:'Sfeclă roșie (plan 2026)',r:'Planificat',c:'#c0392b',cls:'role-a',desc:'Rădăcini extrag mangan, frunze tinere comestibile.'},
+    {n:'Morcov + Ceapă (alternativ)',r:'Afânare + Protector',c:'#ffd166',cls:'role-ac',desc:'Clasic anti-dăunători: sulful cepei respinge musca morcovului.'},
+    {n:'Ridichi (marcatori)',r:'Marcator + afânare',c:'#f4a261',cls:'role-ac',desc:'Germinare 5 zile — marchează rândul. Recoltezi la 25 zile.'},
+  ]},
+  {r:'G-R6',name:'G-R6 — Frăția Roșiei (Roșii Cherry + Inimă de Bou)',plants:[
+    {n:'Zmeur (col V, existent)',r:'Ancoră/Umbră',c:'#e76f51',cls:'role-a',desc:'Col V.'},
+    {n:'Roșii cherry',r:'Ancoră',c:'#c0392b',cls:'role-a',desc:'Plantare mai. 60cm distanță. Palisare. 1-2 tulpini principale.'},
+    {n:'Roșii Inimă de Bou',r:'Ancoră',c:'#e74c3c',cls:'role-a',desc:'Alternezi cu cherry. 70cm. Soiuri mari, calitate înaltă.'},
+    {n:'Busuioc',r:'Protector',c:'#52b788',cls:'role-p',desc:'1 plantă la 2 roșii. Florile atrag albinele.'},
+    {n:'Crăițe',r:'Protector+Atractor',c:'#ffd166',cls:'role-p',desc:'La fiecare 3-4 roșii câte o crăiță.'},
+    {n:'Morcov (margine rând)',r:'Afânare sol',c:'#f4a261',cls:'role-ac',desc:'Pe marginea rândului. Afânează argilă fără să concureze cu roșia.'},
+  ]},
+  {r:'G-R7',name:'G-R7 — Frăția Verzei (Varză + Kale + Mentă)',plants:[
+    {n:'Coacăz (col V, existent)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Col V.'},
+    {n:'Varză',r:'Ancoră',c:'#52b788',cls:'role-a',desc:'Transplant mai. 50cm. Mult azot necesar. Udare regulată.'},
+    {n:'Varză Kale',r:'Ancoră sezon lung',c:'#7ec8da',cls:'role-a',desc:'Rezistă la -10°C. Recoltezi frunze exterioare până în ianuarie.'},
+    {n:'Mentă (ghiveci înfundat!)',r:'Protector',c:'#9b5de5',cls:'role-p',desc:'Mentolul respinge Pieris brassicae (fluturele alb al verzei). GHIVECI OBLIGATORIU — altfel invadează totul.'},
+    {n:'Crăițe',r:'Atractor parazitoizi',c:'#ffd166',cls:'role-p',desc:'Atrag Cotesia glomerata — parazitoid al omizilor vărzarului.'},
+  ]},
+  {r:'G-R8',name:'G-R8 — Trio Rădăcinoase (Pastârnac · Sfeclă · Morcov)',plants:[
+    {n:'Coacăz (col V, existent)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Pastârnac',r:'Afânare profundă',c:'#ffd166',cls:'role-ac',desc:'Rădăcini până la 50cm — cel mai bun afânator natural al argilei din Dridu.'},
+    {n:'Sfeclă roșie',r:'Furnizor minerale',c:'#e76f51',cls:'role-a',desc:'Extrage mangan din strate profunde. Frunze tinere comestibile.'},
+    {n:'Morcov + Ceapă (alternativ rânduri)',r:'Protector reciproc',c:'#f4a261',cls:'role-p',desc:'Sulful cepei respinge musca morcovului (Psila rosae).'},
+    {n:'Prun + Cireș + Cais (E)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Pomi existenți pe coloanele E.'},
+  ]},
+  {r:'G-R9',name:'G-R9 — Frăția Ardeiului (Ardei · Vinete · Floarea Soarelui)',plants:[
+    {n:'Coacăz (col V, existent)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Ardei capia',r:'Ancoră',c:'#e65100',cls:'role-a',desc:'11 spații libere. Plantare după 15 mai.'},
+    {n:'Vinete',r:'Ancoră',c:'#9b5de5',cls:'role-a',desc:'Plantare după 20 mai. 50cm distanță. Mulci la bază imediat.'},
+    {n:'Floarea soarelui (capete rând)',r:'Ancoră + Habitat',c:'#ffd166',cls:'role-at',desc:'La capetele rândului. Rădăcini 2m sparg argilă. Habitat păsări insectivore.'},
+    {n:'Busuioc',r:'Protector',c:'#52b788',cls:'role-p',desc:'Alungă tripsii vinetelor și ardeilor.'},
+    {n:'Crăițe (margini)',r:'Anti-nematozi',c:'#f4a261',cls:'role-p',desc:'Pe marginile rândului.'},
+  ]},
+  {r:'G-R10',name:'G-R10 — Frăția Roșiei (Roșii Cherry · Schinduf · Mentă)',plants:[
+    {n:'Coacăz (col V, existent)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Roșii cherry',r:'Ancoră',c:'#c0392b',cls:'role-a',desc:'~10 plante. 60cm distanță. Palisare pe araci sau spalier.'},
+    {n:'Schinduf (intercalat)',r:'Fixator N',c:'#06d6a0',cls:'role-n',desc:'Semănat direct între roșii. 40 zile → taie și lasă ca mulci verde.'},
+    {n:'Busuioc',r:'Protector',c:'#52b788',cls:'role-p',desc:'1 plantă la 3 roșii.'},
+    {n:'Mentă (margine E, ghiveci)',r:'Protector',c:'#9b5de5',cls:'role-p',desc:'Ghiveci înfundat pe marginea E. Respinge musca albă.'},
+    {n:'Crăițe (capete)',r:'Anti-nematozi',c:'#ffd166',cls:'role-p',desc:'La capetele rândului.'},
+  ]},
+  {r:'G-R11',name:'G-R11 — Zmeur · Prun · Cais · Spații libere',plants:[
+    {n:'Zmeur (col V)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Spații libere (col 2-3)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Prun + Cais (E)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Pomi existenți.'},
+  ]},
+  {r:'G-R12',name:'G-R12 — Zmeur · Prun · Spații libere',plants:[
+    {n:'Zmeur (col V)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Spații libere (col 2-3)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Prun + spații E',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Prun existent, restul spații libere.'},
+  ]},
+  {r:'G-R13',name:'G-R13 — Zmeur · Măr · Mentă · Schinduf · Soc',plants:[
+    {n:'Zmeur (col V)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Mentă (ghiveci)',r:'Protector',c:'#9b5de5',cls:'role-p',desc:'Ghiveci înfundat în sol — previne invazie. Mentolul respinge dăunătorii.'},
+    {n:'Schinduf (spații libere)',r:'Fixator N',c:'#06d6a0',cls:'role-n',desc:'Pe spațiile libere disponibile. Fixează azot.'},
+    {n:'Măr (col 5) + Măr (col 12)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Meri existenți.'},
+    {n:'Soc (col 13)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Soc la capătul E. Habitat insecte benefice.'},
+  ]},
+  {r:'G-R14',name:'G-R14 — Zmeur · Trio Rădăcinoase · Soc',plants:[
+    {n:'Zmeur (col V)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Ridichi (marcatori)',r:'Marcator + afânare',c:'#f4a261',cls:'role-ac',desc:'Semănat devreme primăvară.'},
+    {n:'Pastârnac',r:'Afânare profundă',c:'#ffd166',cls:'role-ac',desc:'Rădăcini 50cm — afânează argilă în profunzime.'},
+    {n:'Spanac (devreme)',r:'Acoperiș rapid',c:'#7ec8da',cls:'role-ac',desc:'Semănat de la 5°C. Recoltă în 40 zile.'},
+    {n:'Soc (col 13)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Soc la capătul E. Habitat insecte benefice.'},
+  ]},
+  {r:'G-R15',name:'G-R15 — Coacăz · Prun · Măr · Spații libere',plants:[
+    {n:'Coacăz (col V)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Spații libere (col 2-3)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Prun + Măr (E)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Pomi existenți.'},
+  ]},
+  {r:'G-R16',name:'G-R16 — Coacăz · Măr · Moșmon · Spații libere',plants:[
+    {n:'Coacăz (col V)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Spații libere (col 2-4)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Măr (col 6)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent.'},
+    {n:'Moșmon (col 13)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Moșmon la capătul E.'},
+  ]},
+  {r:'G-R17',name:'G-R17 — Coacăz · ⚠ NUC JUGLONĂ · Spații libere',plants:[
+    {n:'Coacăz (col V)',r:'Deja existent',c:'#7ec8da',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Spații libere (col 2-11)',r:'Disponibil — cu restricție!',c:'#888888',cls:'role-ac',desc:'EVITĂ solanacee (roșii, ardei, vinete, cartofi) și mure în 4-5m de nuc! Sigur: fasole, sfeclă, morcov, porumb, crăițe.'},
+    {n:'⚠ NUC BĂTRÂN (col 12)',r:'PERICOL juglonă 4-5m!',c:'#e76f51',cls:'role-p',desc:'Juglona din rădăcini este toxică pentru solanacee și mure în raza de 4-5m. Cei mai sensibili: roșii, ardei, vinete, cartofi.'},
+  ]},
+  {r:'G-R18',name:'G-R18 — Zmeur · Prun · Floarea Soarelui · Moșmon',plants:[
+    {n:'Zmeur (col V)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Floarea soarelui (capete libere)',r:'Ancoră + Habitat',c:'#ffd166',cls:'role-at',desc:'Atractor polenizatori. Rădăcini 2m sparg argilă.'},
+    {n:'Prun (col 4)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent.'},
+    {n:'Moșmon (col 13)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Moșmon la capătul E.'},
+  ]},
+  {r:'G-R19',name:'G-R19 — Zmeur · Păr columnar · Cireș · Spații libere',plants:[
+    {n:'Zmeur (col V)',r:'Deja existent',c:'#e76f51',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Păr columnar (col 3)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent, formă îngustă.'},
+    {n:'Spații libere (col 2,4-11)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile — ideal gălbenele sau crăițe.'},
+    {n:'Cireș (col 12)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent.'},
+  ]},
+  {r:'G-R20',name:'G-R20 — Corn · Prun · Dud · Spații libere',plants:[
+    {n:'Corn (col V)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Prun (col 3)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent.'},
+    {n:'Spații libere (col 2,4-11)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Dud (col 12)',r:'Deja existent',c:'#9b5de5',cls:'role-a',desc:'Existent.'},
+  ]},
+  {r:'G-R21',name:'G-R21 — Frăția Verzei · Varză Kale · Mentă · Cais',plants:[
+    {n:'Spații libere (col V 1-3)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'3 spații libere la V — ideal varză kale.'},
+    {n:'Varză Kale',r:'Ancoră sezon lung',c:'#7ec8da',cls:'role-a',desc:'Rezistă la -10°C. Recoltezi frunze până în ianuarie.'},
+    {n:'Mentă (ghiveci)',r:'Protector',c:'#9b5de5',cls:'role-p',desc:'Ghiveci înfundat. Respinge fluturele alb al verzei.'},
+    {n:'Cais + Moșmon (E)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Pomi existenți.'},
+  ]},
+  {r:'G-R22',name:'G-R22 — Corn · Prun · Spații libere',plants:[
+    {n:'Corn (col V)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Col 1, existent.'},
+    {n:'Spații libere (col 2-3)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Disponibile.'},
+    {n:'Prun (col 5) + spații E',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Prun existent.'},
+  ]},
+  {r:'G-R23',name:'G-R23 — Frăția Salatelor (Amestec Solar)',plants:[
+    {n:'Spanac',r:'Acoperiș rapid',c:'#7ec8da',cls:'role-ac',desc:'Col 1 și 8. Crește repede. Recoltezi la 40 zile.'},
+    {n:'Rucola',r:'Acoperiș rapid',c:'#52b788',cls:'role-ac',desc:'Col 2 și 3. 30 zile maturitate. Seamănă la 3 săptămâni interval.'},
+    {n:'Macriș (PEREN!)',r:'Ancoră perenă',c:'#ffd166',cls:'role-a',desc:'PEREN — revine singur ani de-a rândul. Frunze acre comestibile toată perioada. Plantezi o dată, recoltezi 10 ani.'},
+    {n:'Mangold',r:'Ancoră producție lungă',c:'#f4a261',cls:'role-a',desc:'Rădăcini profunde afânează argilă solarului.'},
+    {n:'Pătrunjel',r:'Atractor insecte',c:'#9b5de5',cls:'role-at',desc:'Florile atrag Syrphidae. Rădăcina pivotantă aerisește solul.'},
+    {n:'Ridichi',r:'Marcator + afânare',c:'#e76f51',cls:'role-ac',desc:'Germinare 5 zile — marchează rândul. Recoltezi la 25 zile.'},
+  ]},
+  {r:'G-R24',name:'G-R24 — Solar · Frăția Ardeiului + Cartofi',plants:[
+    {n:'Spanac + Rucola (col 1-4 solar)',r:'Deja plantat',c:'#7ec8da',cls:'role-ac',desc:'Col 1-4 în solar — amestec salate.'},
+    {n:'Ardei gras (rotație)',r:'Planificat',c:'#e65100',cls:'role-a',desc:'Rotație după spanac: ardei gras vară.'},
+    {n:'Busuioc (intercalat)',r:'Protector',c:'#52b788',cls:'role-p',desc:'Intercalat între ardei.'},
+    {n:'Cartofi + Pătrunjel (col 5-13)',r:'Deja plantat',c:'#f4a261',cls:'role-a',desc:'Col 5-13.'},
+  ]},
+  {r:'G-R25',name:'G-R25 — Solar · Frăția Roșiei + Cartofi',plants:[
+    {n:'Spanac + Rucola (col 1-4 solar)',r:'Deja plantat',c:'#7ec8da',cls:'role-ac',desc:'Col 1-4 în solar.'},
+    {n:'Roșii cherry (rotație)',r:'Planificat',c:'#c0392b',cls:'role-a',desc:'Rotație după spanac: roșii cherry.'},
+    {n:'Busuioc',r:'Protector',c:'#52b788',cls:'role-p',desc:'Companion clasic roșii.'},
+    {n:'Cartofi + Pătrunjel (col 5-13)',r:'Deja plantat',c:'#f4a261',cls:'role-a',desc:'Col 5-13.'},
+  ]},
+  {r:'G-R26',name:'G-R26 — Solar · Schinduf + Mentă + Vișin',plants:[
+    {n:'Spanac + Rucola (col 1-4 solar)',r:'Deja plantat',c:'#7ec8da',cls:'role-ac',desc:'Col 1-4 în solar.'},
+    {n:'Schinduf (rotație)',r:'Fixator N',c:'#06d6a0',cls:'role-n',desc:'Schinduf fixează azot, pregătește solul pentru toamnă.'},
+    {n:'Mentă (ghiveci)',r:'Protector',c:'#9b5de5',cls:'role-p',desc:'Ghiveci înfundat. Respinge dăunători.'},
+    {n:'Vișin (col 7) + Cartofi (col 5-6, 8-13)',r:'Deja plantat',c:'#52b788',cls:'role-a',desc:'Vișin existent. Cartofi col 5-13.'},
+  ]},
+  {r:'G-R27',name:'G-R27 — Amestec Salate · Cartofi · Spanac',plants:[
+    {n:'Amestec* rucola+patrunjel+mustar+chia (col 1-3)',r:'Deja plantat',c:'#06d6a0',cls:'role-ac',desc:'Amestec salate pe primele 3 coloane.'},
+    {n:'Cartofi (col 4-5)',r:'Deja plantat',c:'#f4a261',cls:'role-a',desc:'Existenți.'},
+    {n:'Pătrunjel + Spanac + Ridichi (col 6-9)',r:'Deja plantat',c:'#52b788',cls:'role-ac',desc:'Amestec salate spre E.'},
+  ]},
+  {r:'G-R28',name:'G-R28 — Amestec Salate · Cartofi · Ridichi',plants:[
+    {n:'Amestec* rucola+patrunjel+mustar+chia (col 1-3)',r:'Deja plantat',c:'#06d6a0',cls:'role-ac',desc:'Amestec salate.'},
+    {n:'Cartofi (col 4-5)',r:'Deja plantat',c:'#f4a261',cls:'role-a',desc:'Existenți.'},
+    {n:'Pătrunjel + Spanac + Ridichi (col 6-9)',r:'Deja plantat',c:'#52b788',cls:'role-ac',desc:'Col 6-9.'},
+  ]},
+  {r:'G-R29',name:'G-R29 — 4 Spații libere V · Sfeclă · Varță · Vișin',plants:[
+    {n:'Spații libere (col 1-4)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Plan 2026: sfeclă roșie + varză.'},
+    {n:'Sfeclă roșie (plan 2026)',r:'Planificat',c:'#c0392b',cls:'role-a',desc:'Plan 2026 pentru spațiile libere V.'},
+    {n:'Varță (plan 2026)',r:'Planificat',c:'#52b788',cls:'role-a',desc:'Plan 2026.'},
+    {n:'Vișin (col 5) + Pătrunjel + Ridichi (col 6-9)',r:'Deja plantat',c:'#52b788',cls:'role-a',desc:'Vișin existent + salate spre E.'},
+  ]},
+  {r:'G-R30',name:'G-R30 — 4 Spații libere V · Pastârnac · Morcov · Garoafe',plants:[
+    {n:'Spații libere (col 1-4)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Plan 2026: pastârnac + morcov.'},
+    {n:'Pastârnac (plan 2026)',r:'Afânare profundă',c:'#ffd166',cls:'role-ac',desc:'Rădăcini 50cm — afânator natural argilă.'},
+    {n:'Morcov (plan 2026)',r:'Afânare + Protector',c:'#f4a261',cls:'role-ac',desc:'Companion cu ceapă.'},
+    {n:'Cartofi + Garoafe + Ridichi (col 5-9)',r:'Deja plantat',c:'#f4a261',cls:'role-a',desc:'Garoafele resping afidele — lasă-le să înflorească!'},
+  ]},
+  {r:'G-R31',name:'G-R31 — Ginkgo · Vișin · Soc · WC colț SE',plants:[
+    {n:'Spații libere (col 1-2)',r:'Disponibil',c:'#888888',cls:'role-ac',desc:'Libere la V.'},
+    {n:'Ginkgo biloba (col 3)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent. Capătul S al grădinii.'},
+    {n:'Vișin (col 5)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Existent.'},
+    {n:'Soc (col 8)',r:'Deja existent',c:'#52b788',cls:'role-a',desc:'Soc — habitat insecte benefice. WC în colțul SE al grădinii.'},
+  ]},
 ];
-
 // ══════════════════════════════════════════
 // STORAGE
 // ══════════════════════════════════════════
