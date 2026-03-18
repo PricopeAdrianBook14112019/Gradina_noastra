@@ -261,6 +261,42 @@ INSTRUCTIUNI PENTRU ASISTENTUL AI CARE CITESTE ACEST BLOC:
   --text:#caf0f8; --text2:#7ec8da; --text3:#4a8fa8;
   --fantana:#4361ee; --container:#7b2d8b; --both:#06d6a0;
   --r:6px;
+ /* ADAUGĂ ASTA LA FINALUL SECȚIUNII <style> */
+@media (max-width: 768px) {
+  /* Face meniul de tab-uri să poată fi glisat cu degetul stânga-dreapta */
+  #tabbar {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+  }
+  
+  /* Ajustează tabelele să nu iasă din ecran */
+  .itbl-wrap, .jurnal-body {
+    overflow-x: auto;
+  }
+  
+  /* Mărește butoanele pentru a fi mai ușor de apăsat cu degetul */
+  .tab, .topbtn, .jurnal-add-btn {
+    padding: 12px 15px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  /* Permite hărții să fie glisată orizontal pe ecrane foarte înguste */
+  .prop-map-wrap, .irig-map {
+    overflow-x: auto;
+  }
+  
+  /* Stivuiește statisticile vertical pe mobil */
+  #statsrow {
+    flex-wrap: wrap;
+  }
+  .st {
+    flex: 1 1 30%;
+    border-bottom: 1px solid var(--border);
+  }
+} 
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;overflow:hidden}
