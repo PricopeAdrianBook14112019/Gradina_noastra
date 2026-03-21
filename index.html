@@ -3,179 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Grădina Dridu - Proiect GitHub</title>
+    <title>Grădina Dridu - Master Plan v9</title>
     <style>
         :root {
-            --bg: #0d1b2a; --panel: #163147; --accent: #00b4d8;
-            --green: #52b788; --text: #caf0f8; --border: #1e4060;
+            --bg: #0b132b; --card: #1c2541; --accent: #3a506b; --text: #f0f0f0;
+            --water: #00b4d8; --plant: #52b788; --path: #5c677d;
         }
-        body { 
-            font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); 
-            margin: 0; padding: 10px; line-height: 1.6;
-        }
-        /* Layout Mobil */
-        .card {
-            background: var(--panel); border: 1px solid var(--border);
-            border-radius: 12px; padding: 15px; margin-bottom: 15px;
-        }
-        h1, h2 { color: var(--accent); text-align: center; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 10px; }
         
-        /* Tabel Responsiv */
-        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        table { width: 100%; border-collapse: collapse; min-width: 400px; }
-        th, td { padding: 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
-        th { background: rgba(0,180,216,0.1); }
+        .header-nav { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 10px; margin-bottom: 15px; }
+        .nav-btn { background: var(--accent); color: white; border: none; padding: 12px 20px; border-radius: 25px; white-space: nowrap; font-size: 0.9rem; }
+        
+        /* Container Principal */
+        .zone-container { display: none; animation: fadeIn 0.4s; }
+        .zone-container.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Badge-uri Status */
-        .badge { padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
-        .status-wait { background: #f4a261; color: #000; }
-        
-        /* Lista Semințe - Optimizată pentru scroll */
-        .seed-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .seed-item { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 6px; font-size: 0.85rem; }
+        /* Grila de Rânduri */
+        .row-grid { display: flex; flex-direction: column; gap: 8px; }
+        .row-line { 
+            background: var(--card); border-left: 5px solid var(--water); 
+            padding: 12px; border-radius: 4px; display: flex; align-items: center; justify-content: space-between;
+        }
+        .row-id { font-weight: bold; color: var(--water); min-width: 40px; }
+        .row-content { flex-grow: 1; margin-left: 10px; font-size: 0.85rem; }
+
+        /* Curtea - Vizualizare Specială */
+        .curte-path {
+            border: 2px dashed var(--path); padding: 15px; border-radius: 10px; position: relative;
+        }
+        .node { background: #34495e; padding: 10px; margin: 5px 0; border-radius: 5px; font-size: 0.8rem; }
+        .source { border: 2px solid var(--water); color: var(--water); font-weight: bold; text-align: center; }
+
+        /* Stil pentru mobil */
+        input, select { background: #1a2235; color: white; border: 1px solid var(--accent); padding: 10px; border-radius: 5px; width: 100%; margin-bottom: 10px; }
+        .btn-add { background: var(--plant); color: #0b132b; font-weight: bold; width: 100%; border: none; padding: 15px; border-radius: 8px; }
     </style>
 </head>
 <body>
 
-    <h1>🌿 Grădina Dridu v7</h1>
+    <div class="header-nav">
+        <button class="nav-btn" onclick="showZone('gradina')">🌽 Grădină (31 r)</button>
+        <button class="nav-btn" onclick="showZone('livada')">🍎 Livadă (4 r)</button>
+        <button class="nav-btn" onclick="showZone('curte')">🏠 Curte & Irigații</button>
+    </div>
 
-    <div class="card">
-        <h2>📅 Activități Martie-Aprilie</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Activitate</th>
-                        <th>Termen</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="task-body">
-                    <tr>
-                        <td>Semănat căpșuni sub afine</td>
-                        <td>28 Martie</td>
-                        <td><span class="badge status-wait">În așteptare</span></td>
-                    </tr>
-                    <tr>
-                        <td>Plantat ceapă lângă merișor</td>
-                        <td>30 Martie</td>
-                        <td><span class="badge status-wait">În așteptare</span></td>
-                    </tr>
-                </tbody>
-            </table>
+    <div id="gradina" class="zone-container active">
+        <h3>Grădina (N->S)</h3>
+        <div class="row-grid" id="grid-gradina">
+            </div>
+    </div>
+
+    <div id="livada" class="zone-container">
+        <h3>Livada (Partea de Sus)</h3>
+        <div class="row-grid" id="grid-livada">
+            </div>
+    </div>
+
+    <div id="curte" class="zone-container">
+        <h3>Schema Irigație Curte</h3>
+        <div class="curte-path">
+            <div class="node source">💧 REZERVOR 100L (E->S)</div>
+            <div class="node">📍 Alee NS (Spre Drum)</div>
+            <div class="node">📍 Paralel Construcție (S->N)</div>
+            <div class="node">📍 Boltă Viță (Vișini & Afini)</div>
+            <div class="node">📍 Zona Fântână / Ghiuvetă</div>
+            <div class="node source">🚰 ALIMENTARE PUȚ (Magazie)</div>
+            <div class="node" style="border-left: 4px solid var(--plant);">🌿 4 Linii Perpendiculare Magazie (Până la 2m de Țarc)</div>
         </div>
     </div>
 
-    <div class="card">
-        <h2>🌱 Semințe de pus în Mai</h2>
-        <div class="seed-list">
-            <div class="seed-item">🍅 Roșii Raluca</div>
-            <div class="seed-item">🥒 Kiwano African</div>
-            <div class="seed-item">🥒 Dovlecel Cerna</div>
-            <div class="seed-item">🎃 Dovleac Tudor</div>
-            <div class="seed-item">🥬 Mangold 5 culori</div>
-            <div class="seed-item">🌿 Maghiran</div>
-        </div>
-        <p style="font-size: 0.7rem; margin-top: 10px; color: var(--accent);">* Notă: Semințele de pătrunjel au fost tratate în alcool pentru germinare rapidă.</p>
-    </div>
-
-    <script>
-        // Logica pentru interactivitate pe mobil (ex: bifare task-uri)
-        document.querySelectorAll('tr').forEach(row => {
-            row.addEventListener('click', () => {
-                row.style.opacity = row.style.opacity === '0.5' ? '1' : '0.5';
-            });
-        });
-    </script>
-</body>
-</html><!DOCTYPE html>
-<html lang="ro">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Grădina Dridu - Proiect GitHub</title>
-    <style>
-        :root {
-            --bg: #0d1b2a; --panel: #163147; --accent: #00b4d8;
-            --green: #52b788; --text: #caf0f8; --border: #1e4060;
-        }
-        body { 
-            font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); 
-            margin: 0; padding: 10px; line-height: 1.6;
-        }
-        /* Layout Mobil */
-        .card {
-            background: var(--panel); border: 1px solid var(--border);
-            border-radius: 12px; padding: 15px; margin-bottom: 15px;
-        }
-        h1, h2 { color: var(--accent); text-align: center; }
-        
-        /* Tabel Responsiv */
-        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        table { width: 100%; border-collapse: collapse; min-width: 400px; }
-        th, td { padding: 12px; border-bottom: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
-        th { background: rgba(0,180,216,0.1); }
-
-        /* Badge-uri Status */
-        .badge { padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; }
-        .status-wait { background: #f4a261; color: #000; }
-        
-        /* Lista Semințe - Optimizată pentru scroll */
-        .seed-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .seed-item { background: rgba(255,255,255,0.05); padding: 8px; border-radius: 6px; font-size: 0.85rem; }
-    </style>
-</head>
-<body>
-
-    <h1>🌿 Grădina Dridu v7</h1>
-
-    <div class="card">
-        <h2>📅 Activități Martie-Aprilie</h2>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Activitate</th>
-                        <th>Termen</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="task-body">
-                    <tr>
-                        <td>Semănat căpșuni sub afine</td>
-                        <td>28 Martie</td>
-                        <td><span class="badge status-wait">În așteptare</span></td>
-                    </tr>
-                    <tr>
-                        <td>Plantat ceapă lângă merișor</td>
-                        <td>30 Martie</td>
-                        <td><span class="badge status-wait">În așteptare</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <div class="card">
-        <h2>🌱 Semințe de pus în Mai</h2>
-        <div class="seed-list">
-            <div class="seed-item">🍅 Roșii Raluca</div>
-            <div class="seed-item">🥒 Kiwano African</div>
-            <div class="seed-item">🥒 Dovlecel Cerna</div>
-            <div class="seed-item">🎃 Dovleac Tudor</div>
-            <div class="seed-item">🥬 Mangold 5 culori</div>
-            <div class="seed-item">🌿 Maghiran</div>
-        </div>
-        <p style="font-size: 0.7rem; margin-top: 10px; color: var(--accent);">* Notă: Semințele de pătrunjel au fost tratate în alcool pentru germinare rapidă.</p>
+    <div style="margin-top: 30px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 10px;">
+        <h4>📝 Adaugă/Modifică Rând</h4>
+        <select id="sel-zone">
+            <option value="gradina">Grădină</option>
+            <option value="livada">Livadă</option>
+        </select>
+        <input type="number" id="sel-row" placeholder="Nr. Rând">
+        <input type="text" id="sel-plant" placeholder="Ce ai plantat? (ex: Roșii Raluca)">
+        <button class="btn-add" onclick="updateRow()">ACTUALIZEAZĂ STATUS</button>
     </div>
 
     <script>
-        // Logica pentru interactivitate pe mobil (ex: bifare task-uri)
-        document.querySelectorAll('tr').forEach(row => {
-            row.addEventListener('click', () => {
-                row.style.opacity = row.style.opacity === '0.5' ? '1' : '0.5';
-            });
-        });
+        function showZone(id) {
+            document.querySelectorAll('.zone-container').forEach(z => z.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        // Generare Rânduri Grădină (31)
+        const gGrid = document.getElementById('grid-gradina');
+        for(let i=1; i<=31; i++) {
+            gGrid.innerHTML += `<div class="row-line" id="g-row-${i}"><span class="row-id">R${i}</span><span class="row-content" id="g-content-${i}">-</span></div>`;
+        }
+
+        // Generare Rânduri Livadă (4)
+        const lGrid = document.getElementById('grid-livada');
+        for(let i=1; i<=4; i++) {
+            lGrid.innerHTML += `<div class="row-line" id="l-row-${i}"><span class="row-id">L${i}</span><span class="row-content" id="l-content-${i}">-</span></div>`;
+        }
+
+        function updateRow() {
+            const zone = document.getElementById('sel-zone').value;
+            const row = document.getElementById('sel-row').value;
+            const plant = document.getElementById('sel-plant').value;
+            const prefix = zone === 'gradina' ? 'g-content-' : 'l-content-';
+            
+            const target = document.getElementById(prefix + row);
+            if(target) {
+                target.innerText = plant;
+                // Salvare în localstorage
+                localStorage.setItem(prefix + row, plant);
+            }
+        }
+
+        // Load data
+        window.onload = () => {
+            for(let i=1; i<=31; i++) {
+                const val = localStorage.getItem('g-content-' + i);
+                if(val) document.getElementById('g-content-' + i).innerText = val;
+            }
+        };
     </script>
 </body>
 </html>
